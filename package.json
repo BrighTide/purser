@@ -16,10 +16,10 @@
     "lint": "eslint modules/**/*.js",
     "lint:fix": "eslint modules/**/*.js --fix",
     "lint:ci": "eslint --format junit -o reports/eslint/eslint-results.xml modules/**/*.js",
-    "test": "NODE_ENV=test jest",
-    "test:watch": "NODE_ENV=test jest --watchAll --verbose",
-    "test:coverage": "NODE_ENV=test jest --coverage",
-    "test:ci": "NODE_ENV=test jest --no-cache --ci --bail --verbose=true --maxWorkers 2 --reporters='jest-junit'"
+    "test": "cross-env NODE_ENV=test jest",
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll --verbose",
+    "test:coverage": "cross-env NODE_ENV=test jest --coverage",
+    "test:ci": "cross-env NODE_ENV=test jest --no-cache --ci --bail --verbose=true --maxWorkers 2 --reporters='jest-junit'"
   },
   "repository": {
     "type": "git",
@@ -56,6 +56,7 @@
     "camelcase": "^5.2.0",
     "chalk": "^2.3.1",
     "chokidar": "^3.0.0",
+    "cross-env": "^7.0.0",
     "denodeify": "^1.2.1",
     "eslint": "6.1.0",
     "eslint-config-airbnb-base": "^13.2.0",
@@ -74,7 +75,7 @@
     "jest-sandbox": "^1.1.1",
     "lint-staged": "8.0.4",
     "prettier": "^1.15.2",
-    "regenerator-runtime": "^0.13.0"
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.2",
@@ -93,8 +94,8 @@
   },
   "greenkeeper": {
     "ignore": [
-        "eslint-plugin-import",
-        "lint-staged"
+      "eslint-plugin-import",
+      "lint-staged"
     ]
   }
 }

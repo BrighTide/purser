@@ -1,0 +1,7 @@
+`npx parcel index.html`
+`npx serve`
+`ngrok 5000`
+
+- Navigate to ngrok url on phone in metamask
+- Enable usb debugging on phone
+- Navigate to chrome://inspect and inspect metamask debug target
